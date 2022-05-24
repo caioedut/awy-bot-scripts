@@ -24,7 +24,7 @@ CheckMovement:
 	sPressed := GetKeyState("s", "P")
 	dPressed := GetKeyState("d", "P")
 
-	base := 150
+	base := 200
 	targetX := MiddlePosX
 	targetY := MiddlePosY
 
@@ -46,7 +46,7 @@ CheckMovement:
 
 	If (targetX != MiddlePosX || targetY != MiddlePosY) {
 		MouseClick, left, targetX, targetY
-		Sleep 150
+		Sleep 100
 	}
 
 	Return
