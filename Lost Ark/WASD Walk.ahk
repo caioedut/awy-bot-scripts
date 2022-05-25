@@ -4,17 +4,10 @@ $w::
 $a::
 $s::
 $d::
-If (!IsActive()) {
-    Send, %A_ThisHotkey%
-}
 Return
 
 Movement:
 {
-    If (!IsActive()) {
-        Return
-    }
-
     wPressed := GetKeyState("w", "P")
     aPressed := GetKeyState("a", "P")
     sPressed := GetKeyState("s", "P")
@@ -44,7 +37,9 @@ Movement:
         targetX += base
     }
 
-    MouseClick, left, targetX, targetY
+    If (targetX != MiddlePosX || targetY != MiddlePosY) {
+        MouseClick, left, targetX, targetY
+    }
 
     Return
 }
