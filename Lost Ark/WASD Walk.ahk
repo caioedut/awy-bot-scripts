@@ -1,53 +1,50 @@
+SetTimer, Movement, 100
+
 $w::
 $a::
 $s::
 $d::
-Gosub, CheckMovement
+If (!IsActive()) {
+    Send, %A_ThisHotkey%
+}
 Return
 
-$w up::
-$a up::
-$s up::
-$d up::
-Gosub, CheckMovement
-Return
-
-CheckMovement:
+Movement:
 {
-	If (!IsActive()) {
-		Send, %A_ThisHotkey%
-		Return
-	}
+    If (!IsActive()) {
+        Return
+    }
 
-	wPressed := GetKeyState("w", "P")
-	aPressed := GetKeyState("a", "P")
-	sPressed := GetKeyState("s", "P")
-	dPressed := GetKeyState("d", "P")
+    wPressed := GetKeyState("w", "P")
+    aPressed := GetKeyState("a", "P")
+    sPressed := GetKeyState("s", "P")
+    dPressed := GetKeyState("d", "P")
 
-	base := 200
-	targetX := MiddlePosX
-	targetY := MiddlePosY
+    If (!wPressed && !aPressed && !sPressed && !dPressed) {
+        Return
+    }
 
-	If (wPressed) {
-		targetY -= base
-	}
+    base := 200
+    targetX := MiddlePosX
+    targetY := MiddlePosY
 
-	If (sPressed) {
-		targetY += base
-	}
+    If (wPressed) {
+        targetY -= base
+    }
 
-	If (aPressed) {
-		targetX -= base
-	}
+    If (sPressed) {
+        targetY += base
+    }
 
-	If (dPressed) {
-		targetX += base
-	}
+    If (aPressed) {
+        targetX -= base
+    }
 
-	If (targetX != MiddlePosX || targetY != MiddlePosY) {
-		MouseClick, left, targetX, targetY
-		Sleep 100
-	}
+    If (dPressed) {
+        targetX += base
+    }
 
-	Return
+    MouseClick, left, targetX, targetY
+
+    Return
 }
