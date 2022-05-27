@@ -4,6 +4,7 @@
 ; Coloque o "Revive" numa hotkey da barra de ícones e mude o uso para:
 ; "Trocar para uso rápido", depois informe a hotkey abaixo:
 
+; Settings
 Hotkey = F1
 
 ;;;;;;;;;;;;;;;;;;;;;;;
