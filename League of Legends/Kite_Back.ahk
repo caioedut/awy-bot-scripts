@@ -1,6 +1,6 @@
 ; Settings
 Hotkey_Run = x
-AtkSpeed := 2.50
+AtkSpeed := 0.70
 Multiplier := 0.568
 
 ;;;;;;;;;;;;;;;;;;;;;;;
