@@ -1,3 +1,6 @@
+; Set correct AtkSpeed and Multiplier below, you can find it on client.
+; AtkSpeed varies on each level and bought item
+
 ; Settings
 Hotkey_Run = x
 AtkSpeed := 0.70
