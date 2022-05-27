@@ -1,9 +1,5 @@
-; Customize auto ping "Enemy Missing" on mouse cursor position below
-
-; Settings
-Hotkey_PingMIA = XButton1
-
 ; Pre-defined hotkeys:
+; Numpad0 Enable/Disable chat
 ; Numpad1 Top MIA
 ; Numpad2 Mid MIA
 ; Numpad3 Bot MIA
@@ -20,8 +16,10 @@ Hotkey_PingMIA = XButton1
 
 #InstallKeybdHook
 #UseHook
+Return
 
-Hotkey, ~%Hotkey_PingMIA%, PingMia, On
+Numpad0::
+Chat("/mute all")
 Return
 
 Numpad1::
@@ -59,26 +57,6 @@ Return
 Numpad9::
 Chat("Baron")
 Return
-
-PingMia:
-{
-    MouseLock()
-    MouseBackup()
-
-    Send, {Ctrl down}
-    SendEvent, {Click down}
-    Sleep, 50
-    MouseMove, -100, 0, 0, R
-    Sleep, 50
-    SendEvent, {Click Up}
-    Send, {Ctrl up}
-    Send, {Ctrl up}
-
-    MouseRestore()
-    MouseRelease()
-
-    Return
-}
 
 Chat(message) {
     Send, {Enter}
