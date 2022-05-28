@@ -22,7 +22,7 @@ Combo:
     MouseLock()
 
     Send, {e}
-    Sleep, 300
+    Sleep, 350
 
     Send, {w}
     Send, {q}
