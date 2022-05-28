@@ -12,6 +12,7 @@ Multiplier := 0.625
 #UseHook
 
 Process, Priority, , A
+SetKeyDelay, 10, -1
 SetDefaultMouseSpeed, 0
 
 global atkSpeed := 0
@@ -19,6 +20,7 @@ global atkDelay := 0
 
 global atkPosX := 0
 global atkPosY := 0
+global kiting := False
 global atkSpeedIcon := GetFile("League of Legends\Icons\attack_speed_icon.png")
 
 RefreshAttackSpeed()
@@ -28,10 +30,14 @@ Hotkey, $%Hotkey_Run%, KiteBack, On
 Return
 
 KiteBack() {
-    If (!atkSpeed) {
+    global Hotkey_Run
+    global kiting
+
+    If (kiting || !atkSpeed ) {
         Return
     }
 
+    kiting := True
     Send, {Space down}
 
     Send, +{RButton}
@@ -40,18 +46,21 @@ KiteBack() {
     Sleep, % atkDelay * 3
 
     Send, {Space up}
+    kiting := False
 
     Return
 }
 
 RefreshAttackSpeed() {
     global Multiplier
+    global Hotkey_Run
 
     If (!atkPosX || !atkPosY) {
         ImageSearch, atkPosX, atkPosY, 0, 0, %A_ScreenWidth%, %A_ScreenHeight%, *60 *TransWhite %atkSpeedIcon%
     }
 
     atkSpeedTxt := GetText(atkPosX + 12, atkPosY, atkPosX + 40, atkPosY + 20)
+    atkSpeedTxt := StrReplace(atkSpeedTxt, " ", "")
 
     If (RegExMatch(atkSpeedTxt, "^\d+\.\d+$")) {
         atkSpeed := atkSpeedTxt
