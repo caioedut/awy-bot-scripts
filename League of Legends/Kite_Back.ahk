@@ -2,7 +2,7 @@
 
 ; Settings
 Hotkey_Run = x
-global Multiplier := 0.568
+Multiplier := 0.625
 
 ;;;;;;;;;;;;;;;;;;;;;;;
 ; DO NOT CHANGE BELOW ;
@@ -16,14 +16,18 @@ SetDefaultMouseSpeed, 0
 
 global atkSpeed := 0
 global atkDelay := 0
+
+global atkPosX := 0
+global atkPosY := 0
+global atkSpeedIcon := GetFile("League of Legends\Icons\attack_speed_icon.png")
+
 RefreshAttackSpeed()
 
 SetTimer, RefreshAttackSpeed, 100
 Hotkey, $%Hotkey_Run%, KiteBack, On
 Return
 
-KiteBack()
-{
+KiteBack() {
     If (!atkSpeed) {
         Return
     }
@@ -41,14 +45,15 @@ KiteBack()
 }
 
 RefreshAttackSpeed() {
-    If (!GetKeyState(%Hotkey_Run%, "P")) {
-        Sleep, 2000
+    global Multiplier
+
+    If (!atkPosX || !atkPosY) {
+        ImageSearch, atkPosX, atkPosY, 0, 0, %A_ScreenWidth%, %A_ScreenHeight%, *60 *TransWhite %atkSpeedIcon%
     }
 
-    ImageSearch, foundX, foundY, 0, 0, %A_ScreenWidth%, %A_ScreenHeight%, *60 *TransWhite C:\AwyBotFiles\Kite_Back\attack_speed_icon.png
-    atkSpeedTxt := GetText(foundX + 12, foundY, foundX + 40, foundY + 20)
+    atkSpeedTxt := GetText(atkPosX + 12, atkPosY, atkPosX + 40, atkPosY + 20)
 
-    If (RegExMatch(atkSpeedTxt, "(\d+(?:\.\d+)?)")) {
+    If (RegExMatch(atkSpeedTxt, "^\d+\.\d+$")) {
         atkSpeed := atkSpeedTxt
         atkSpeed += 0.0
         atkDelay := 1000 / (atkSpeed - 0.1) / (Multiplier * 10)
