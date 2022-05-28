@@ -20,7 +20,6 @@ global atkDelay := 0
 
 global atkPosX := 0
 global atkPosY := 0
-global kiting := False
 global atkSpeedIcon := GetFile("League of Legends\Icons\attack_speed_icon.png")
 
 RefreshAttackSpeed()
@@ -31,13 +30,11 @@ Return
 
 KiteBack() {
     global Hotkey_Run
-    global kiting
 
-    If (kiting || !atkSpeed ) {
+    If (!atkSpeed ) {
         Return
     }
 
-    kiting := True
     Send, {Space down}
 
     Send, +{RButton}
@@ -46,7 +43,6 @@ KiteBack() {
     Sleep, % atkDelay * 3
 
     Send, {Space up}
-    kiting := False
 
     Return
 }
