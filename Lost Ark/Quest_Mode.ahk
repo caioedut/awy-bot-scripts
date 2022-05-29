@@ -1,18 +1,37 @@
-global MiddlePosX := A_ScreenWidth // 2
-global MiddlePosY := A_ScreenHeight // 2
+; Use Scroll Lock to turn quest mode on/off
 
+;;;;;;;;;;;;;;;;;;;;;;;
+; DO NOT CHANGE BELOW ;
+;;;;;;;;;;;;;;;;;;;;;;;
+
+keys := ["$w", "$a", "$s", "$d"]
+MiddlePosX := A_ScreenWidth // 2
+MiddlePosY := A_ScreenHeight // 2
+
+questMode := GetKeyState("ScrollLock", "T")
 SetTimer, Movement, 200
 Return
 
+~ScrollLock::
+{
+    questMode := GetKeyState("ScrollLock", "T")
+    Notify("Quest Mode " (questMode ? "On" : "Off"))
 
-$w::
-$a::
-$s::
-$d::
+    For index, value in keys
+        Hotkey, %value%, BlockKeys, questMode ? "Off" : "On"
+
+    Return
+}
+
+BlockKeys:
 Return
 
 Movement:
 {
+    If (!questMode) {
+        Return
+    }
+
     wPressed := GetKeyState("w", "P")
     aPressed := GetKeyState("a", "P")
     sPressed := GetKeyState("s", "P")
