@@ -4,7 +4,6 @@
 ; DO NOT CHANGE BELOW ;
 ;;;;;;;;;;;;;;;;;;;;;;;
 
-keys := ["$w", "$a", "$s", "$d"]
 MiddlePosX := A_ScreenWidth // 2
 MiddlePosY := A_ScreenHeight // 2
 
@@ -16,15 +15,20 @@ Return
 {
     questMode := GetKeyState("ScrollLock", "T")
     Notify("Quest Mode " (questMode ? "On" : "Off"))
-
-    For index, value in keys
-        Hotkey, %value%, BlockKeys, questMode ? "Off" : "On"
-
     Return
 }
 
-BlockKeys:
-Return
+$w::
+$a::
+$s::
+$d::
+{
+    If (!questMode) {
+        xSend(A_ThisHotkey)
+    }
+
+    Return
+}
 
 Movement:
 {
