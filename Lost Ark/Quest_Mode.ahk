@@ -42,6 +42,7 @@ Movement:
     dPressed := GetKeyState("d", "P")
 
     If (!wPressed && !aPressed && !sPressed && !dPressed) {
+        Send, {g}
         Return
     }
 
