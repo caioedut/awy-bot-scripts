@@ -7,6 +7,7 @@
 MiddlePosX := A_ScreenWidth // 2
 MiddlePosY := A_ScreenHeight // 2
 
+gKeyWait := False
 questMode := GetKeyState("ScrollLock", "T")
 SetTimer, Movement, 200
 Return
@@ -17,6 +18,12 @@ Return
     Notify("Quest Mode " (questMode ? "On" : "Off"))
     Return
 }
+
+~$Escape::
+gKeyWait := True
+Sleep, 1000
+gKeyWait := False
+Return
 
 $w::
 $a::
@@ -42,7 +49,10 @@ Movement:
     dPressed := GetKeyState("d", "P")
 
     If (!wPressed && !aPressed && !sPressed && !dPressed) {
-        Send, {g}
+        If (!gKeyWait && !GetKeyState("LButton", "P") && !GetKeyState("RButton", "P")) {
+            Send, {g}
+        }
+
         Return
     }
 

@@ -1,3 +1,4 @@
+; Set game interface to lowest size (0)
 ; Set "Multiplier" below, you can find it using mouse over "attack speed" status on game.
 
 ; Settings
