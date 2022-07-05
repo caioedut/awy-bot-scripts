@@ -11,7 +11,7 @@ Weapon_PosY = 442
 
 SetMouseDelay, -1
 
-Hotkey, $%Hotkey_Run%, AutoAttack, On
+Hotkey, ~$%Hotkey_Run%, AutoAttack, On
 Return
 
 AutoAttack:

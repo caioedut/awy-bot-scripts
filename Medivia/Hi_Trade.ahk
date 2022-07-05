@@ -7,15 +7,16 @@ Hotkey_Run = g
 ; DO NOT CHANGE BELOW ;
 ;;;;;;;;;;;;;;;;;;;;;;;
 
-chatOffIcon := GetFile("Medivia\Icons\chat_off.png")
+MiddlePosY := A_ScreenHeight // 2
+chatOnIcon := GetFile("Medivia\Icons\chat_on.png")
 
 Hotkey, $%Hotkey_Run%, HiTrade, On
 Return
 
 HiTrade:
 {
-    ImageSearch, chatPosX, chatPosY, 0, 0, %A_ScreenWidth%, %A_ScreenHeight%, *60 *TransWhite %chatOffIcon%
-    If (ErrorLevel > 0) {
+    ImageSearch, chatPosX, chatPosY, 0, 0, %A_ScreenWidth%, %MiddlePosY%, *60 *TransWhite %chatOnIcon%
+    If (chatPosX > 0 && chatPosY > 0) {
         xSend(A_ThisHotkey)
         Return
     }
