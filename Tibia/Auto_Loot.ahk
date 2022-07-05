@@ -5,7 +5,7 @@ SqmSize := A_ScreenHeight // 15
 ^+!RButton::
 {
     MouseGetPos, CenterX, CenterY
-    Notify("X: " CenterX " | Y: " CenterY, 80)
+    Notify("X: " CenterX " | Y: " CenterY, 100)
     Return
 }
 
