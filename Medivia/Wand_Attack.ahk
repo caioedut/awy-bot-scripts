@@ -9,7 +9,7 @@ SetMouseDelay, -1
 
 wandIcon := GetFile("Medivia\Icons\inventory.png")
 
-Hotkey, $%Hotkey_Run%, UseWand, On
+Hotkey, ~$%Hotkey_Run%, UseWand, On
 Return
 
 UseWand:
