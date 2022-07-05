@@ -1,3 +1,5 @@
+; Use "chat off" mode
+
 ; Settings
 Hotkey_Run = x
 Weapon_PosX = 227
