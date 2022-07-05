@@ -1,5 +1,5 @@
 ; Settings
-Hotkey_Run = XButton1
+Hotkey_Run = MButton
 
 ;;;;;;;;;;;;;;;;;;;;;;;
 ; DO NOT CHANGE BELOW ;
@@ -7,7 +7,7 @@ Hotkey_Run = XButton1
 
 SetMouseDelay, -1
 
-runeIcon := GetFile("Medivia\Icons\use_sd.png")
+runeIcon := GetFile("Medivia\Icons\use_gfb.png")
 
 Hotkey, $%Hotkey_Run%, UseRune, On
 Return
