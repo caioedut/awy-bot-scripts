@@ -15,10 +15,10 @@ Return
 AutoAttack:
 {
     MouseGetPos, PosX, PosY
-
     MouseClick, right, %Weapon_PosX%, %Weapon_PosY%, 1, 0
     MouseClick, left, %PosX%, %PosY%, 1, 0
-    Sleep, 2000
+
+    Sleep, 200
 
     Return
 }

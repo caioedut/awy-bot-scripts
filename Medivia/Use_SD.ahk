@@ -1,5 +1,5 @@
 ; Settings
-Hotkey_Run = x
+Hotkey_Run = XButton1
 
 ;;;;;;;;;;;;;;;;;;;;;;;
 ; DO NOT CHANGE BELOW ;
@@ -20,7 +20,7 @@ UseSD:
     MouseClick, right, %sdPosX%, %sdPosY%, 1, 0
     MouseClick, left, %PosX%, %PosY%, 1, 0
 
-    Sleep, 2000
+    Sleep, 200
 
     Return
 }
