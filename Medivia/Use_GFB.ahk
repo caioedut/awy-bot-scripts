@@ -1,5 +1,5 @@
 ; Settings
-Hotkey_Run = MButton
+Hotkey_Run = XButton1
 
 ;;;;;;;;;;;;;;;;;;;;;;;
 ; DO NOT CHANGE BELOW ;

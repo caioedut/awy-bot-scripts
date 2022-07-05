@@ -7,7 +7,7 @@ Hotkey_Run = XButton1
 
 SetMouseDelay, -1
 
-runeIcon := GetFile("Medivia\Icons\use_explosion.png")
+runeIcon := GetFile("Medivia\Icons\use_fb.png")
 
 Hotkey, $%Hotkey_Run%, UseRune, On
 Return
