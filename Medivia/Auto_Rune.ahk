@@ -1,9 +1,11 @@
-Hotkey_Spell = F8
+Hotkey_Spell = {F8}
 Mana = 80
 
 ;;;;;;;;;;;;;;;;;;;;;;;
 ; DO NOT CHANGE BELOW ;
 ;;;;;;;;;;;;;;;;;;;;;;;
+
+#Persistent
 
 icon := GetFile("Medivia\Icons\life_window.png")
 
@@ -62,10 +64,3 @@ AutoRune:
 
     Return
 }
-
-
-;MouseMove, iniX, iniY
-;Sleep, 1000
-;MouseMove, endX, endY
-
-Return
