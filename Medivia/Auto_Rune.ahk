@@ -41,14 +41,14 @@ AutoRune:
     slashPos := InStr(manaText, "/")
 
     If (!slashPos) {
-        Continue
+        Return
     }
 
     currentMana := RegExReplace( SubStr(manaText, 1, slashPos), "[^\d]+" )
     totalMana := RegExReplace( SubStr(manaText, slashPos), "[^\d]+" )
 
     If (!currentMana || currentMana < Mana) {
-        Continue
+        Return
     }
 
     ; Use spell
