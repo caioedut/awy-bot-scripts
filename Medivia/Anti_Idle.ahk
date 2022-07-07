@@ -2,6 +2,10 @@
 ; DO NOT CHANGE BELOW ;
 ;;;;;;;;;;;;;;;;;;;;;;;
 
+If (!A_IsAdmin) {
+    MsgBox, Anti_Idle: Run Awy Bot has Administrator
+}
+
 SetTimer, AntiIdle, 200000
 Gosub, AntiIdle
 Return
