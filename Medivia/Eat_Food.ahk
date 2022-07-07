@@ -3,6 +3,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;
 
 #Persistent
+SetMouseDelay, -1
 
 icons := ["ham", "meat", "fish"]
 
