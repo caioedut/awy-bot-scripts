@@ -22,7 +22,10 @@ EatFood:
             Continue
         }
 
+        MouseBackup()
         Click, %iconX% %iconY% 1 Right
+        MouseRestore()
+
         Break
     }
 
