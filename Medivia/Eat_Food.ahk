@@ -7,7 +7,7 @@ SetMouseDelay, -1
 
 icons := ["ham", "meat", "fish"]
 
-SetTimer, EatFood, 30000
+SetTimer, EatFood, 60000
 Gosub, EatFood
 Return
 
