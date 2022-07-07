@@ -14,7 +14,7 @@ Return
 
 UseWand:
 {
-    ImageSearch, wandPosX, wandPosY, 0, 0, %A_ScreenWidth%, %A_ScreenHeight%, *60 *TransWhite %wandIcon%
+    ImageSearch, wandPosX, wandPosY, 0, 0, %A_ScreenWidth%, %A_ScreenHeight%, %wandIcon%
 
     If (ErrorLevel = 1) {
         MsgBox, Open your inventory first.

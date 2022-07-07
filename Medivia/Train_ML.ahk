@@ -13,7 +13,7 @@ Return
 
 AutoRune:
 {
-    ImageSearch, iconX, iconY, 0, 0, %A_ScreenWidth%, %A_ScreenHeight%, *60 *TransWhite %icon%
+    ImageSearch, iconX, iconY, 0, 0, %A_ScreenWidth%, %A_ScreenHeight%, %icon%
 
     If (ErrorLevel = 1) {
         MsgBox, Open your life/mana panel.

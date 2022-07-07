@@ -14,7 +14,7 @@ Return
 
 UseRune:
 {
-    ImageSearch, runePosX, runePosY, 0, 0, %A_ScreenWidth%, %A_ScreenHeight%, *60 *TransWhite %runeIcon%
+    ImageSearch, runePosX, runePosY, 0, 0, %A_ScreenWidth%, %A_ScreenHeight%, %runeIcon%
 
     MouseGetPos, PosX, PosY
     MouseClick, right, %runePosX%, %runePosY%, 1, 0
