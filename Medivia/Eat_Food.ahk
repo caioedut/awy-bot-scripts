@@ -4,7 +4,7 @@
 
 #Persistent
 
-icons := ["meat", "ham"]
+icons := ["ham", "meat", "fish"]
 
 SetTimer, EatFood, 30000
 Gosub, EatFood
