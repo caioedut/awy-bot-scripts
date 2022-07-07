@@ -20,7 +20,6 @@ UseRune:
     MouseClick, right, %runePosX%, %runePosY%, 1, 0
     MouseClick, left, %PosX%, %PosY%, 1, 0
 
-    Sleep, 200
-
+    Sleep, 500
     Return
 }
