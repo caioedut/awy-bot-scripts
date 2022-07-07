@@ -1,4 +1,4 @@
-Hotkey_Spell = F8
+Hotkey_Spell = {F8}
 Mana = 80
 
 ;;;;;;;;;;;;;;;;;;;;;;;

@@ -1,4 +1,4 @@
-Hotkey_Spell = F8
+Hotkey_Spell = {F10}
 
 ;;;;;;;;;;;;;;;;;;;;;;;
 ; DO NOT CHANGE BELOW ;
@@ -49,6 +49,9 @@ AutoRune:
     If (percent < 90) {
         Return
     }
+
+    ; Use spell
+    Send, %Hotkey_Spell%
 
     Return
 }
