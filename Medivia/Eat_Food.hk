@@ -22,7 +22,7 @@ EatFood:
             Continue
         }
 
-        MouseClick, right, iconX, iconY
+        MouseClick, right, iconX, iconY, 1, 0
         Break
     }
 
