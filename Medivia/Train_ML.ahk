@@ -1,5 +1,4 @@
 Hotkey_Spell = F8
-Mana = 80
 
 ;;;;;;;;;;;;;;;;;;;;;;;
 ; DO NOT CHANGE BELOW ;
@@ -9,16 +8,8 @@ Mana = 80
 
 icon := GetFile("Medivia\Icons\life_window.png")
 
-SetTimer, EatFood, 60000
 SetTimer, AutoRune, 2000
-Gosub, EatFood
 Return
-
-EatFood:
-{
-    ; TODO
-    Return
-}
 
 AutoRune:
 {
@@ -49,18 +40,15 @@ AutoRune:
     currentMana := RegExReplace( SubStr(manaText, 1, slashPos), "[^\d]+" )
     totalMana := RegExReplace( SubStr(manaText, slashPos), "[^\d]+" )
 
-    If (!currentMana || currentMana < Mana) {
+    If (!currentMana) {
         Return
     }
 
-    ; Use spell
-    Send, %Hotkey_Spell%
+    percent := currentMana / totalMana * 100
 
-    ; Anti Kick
-    Sleep, 1000
-    ControlSend, , ^{Up}, ahk_exe %WindowExe%
-    Sleep, 500
-    ControlSend, , ^{Down}, ahk_exe %WindowExe%
+    If (percent < 90) {
+        Return
+    }
 
     Return
 }
