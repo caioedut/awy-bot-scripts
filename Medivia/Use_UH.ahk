@@ -5,6 +5,7 @@ Hotkey_Run = XButton2
 ; DO NOT CHANGE BELOW ;
 ;;;;;;;;;;;;;;;;;;;;;;;
 
+#Persistent
 SetMouseDelay, -1
 
 runeIcon := GetFile("Medivia\Icons\use_uh.png")

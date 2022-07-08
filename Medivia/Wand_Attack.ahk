@@ -5,6 +5,7 @@ Hotkey_Run = x
 ; DO NOT CHANGE BELOW ;
 ;;;;;;;;;;;;;;;;;;;;;;;
 
+#Persistent
 SetMouseDelay, -1
 
 wandIcon := GetFile("Medivia\Icons\inventory.png")
