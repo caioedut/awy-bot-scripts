@@ -6,6 +6,8 @@ If (!A_IsAdmin) {
     MsgBox, Anti_Idle: Run Awy Bot has Administrator
 }
 
+SetKeyDelay, 1, 1
+
 SetTimer, AntiIdle, 200000
 Gosub, AntiIdle
 Return
