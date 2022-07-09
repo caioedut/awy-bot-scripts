@@ -1,8 +1,10 @@
 ; Settings
 Hotkey_1 = NumpadDiv
 Hotkey_2 = NumpadMult
+Hotkey_3 = NumpadSub
 Icon_1 := GetFile("Medivia\Icons\Wand\moonlight.png")
 Icon_2 := GetFile("Medivia\Icons\Wand\fireweaver.png")
+Icon_3 := GetFile("Medivia\Icons\Wand\serpent.png")
 
 ;;;;;;;;;;;;;;;;;;;;;;;
 ; DO NOT CHANGE BELOW ;
@@ -15,24 +17,25 @@ global invIcon := GetFile("Medivia\Icons\inventory.png")
 
 Hotkey, ~$%Hotkey_1%, SetWand1, On
 Hotkey, ~$%Hotkey_2%, SetWand2, On
+Hotkey, ~$%Hotkey_3%, SetWand3, On
 Return
 
 SetWand1:
-{
-    SetWand(Icon_1)
-    Return
-}
+SetWand(Icon_1)
+Return
 
 SetWand2:
-{
-    SetWand(Icon_2)
-    Return
-}
+SetWand(Icon_2)
+Return
+
+SetWand3:
+SetWand(Icon_3)
+Return
 
 SetWand(icon) {
     global invIcon
 
-    ImageSearch, slotX, slotY, 0, 0, %A_ScreenWidth%, %A_ScreenHeight%, *60 *TransWhite %invIcon%
+    ImageSearch, slotX, slotY, 0, 0, %A_ScreenWidth%, %A_ScreenHeight%, %invIcon%
 
     If (ErrorLevel = 1) {
         MsgBox, Open your inventory first.
@@ -47,9 +50,20 @@ SetWand(icon) {
     slotX += 20
     slotY += 80
 
-    ImageSearch, wandX, wandY, 0, 0, %A_ScreenWidth%, %A_ScreenHeight%, %icon%
+    Loop, 10
+    {
+        ImageSearch, wandX, wandY, 0, 0, %A_ScreenWidth%, %A_ScreenHeight%, %icon%
 
-    MouseBackup()
-    MouseClickDrag, left, wandX, wandY, slotX, slotY, 0
-    MouseRestore()
+        If (ErrorLevel = 0) {
+            MouseLock()
+            MouseBackup()
+            MouseClickDrag, left, wandX, wandY, slotX, slotY, 0
+            MouseRestore()
+            MouseRelease()
+
+            Break
+        }
+
+        Sleep, 50
+    }
 }
