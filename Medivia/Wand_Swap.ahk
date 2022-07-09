@@ -32,7 +32,7 @@ SetWand2:
 SetWand(icon) {
     global invIcon
 
-    ImageSearch, slotX, slotY, 0, 0, %A_ScreenWidth%, %A_ScreenHeight%, %invIcon%
+    ImageSearch, slotX, slotY, 0, 0, %A_ScreenWidth%, %A_ScreenHeight%, *60 *TransWhite %invIcon%
 
     If (ErrorLevel = 1) {
         MsgBox, Open your inventory first.
