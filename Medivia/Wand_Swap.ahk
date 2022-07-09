@@ -9,6 +9,7 @@ Icon_2 := GetFile("Medivia\Icons\Wand\fireweaver.png")
 ;;;;;;;;;;;;;;;;;;;;;;;
 
 #Persistent
+SetMouseDelay, -1
 
 global invIcon := GetFile("Medivia\Icons\inventory.png")
 
