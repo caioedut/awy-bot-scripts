@@ -3,8 +3,8 @@ Hotkey_1 = NumpadDiv
 Hotkey_2 = NumpadMult
 Hotkey_3 = NumpadSub
 Icon_1 := GetFile("Medivia\Icons\Wand\moonlight.png")
-Icon_2 := GetFile("Medivia\Icons\Wand\fireweaver.png")
-Icon_3 := GetFile("Medivia\Icons\Wand\serpent.png")
+Icon_2 := GetFile("Medivia\Icons\Wand\serpent.png")
+Icon_3 := GetFile("Medivia\Icons\Wand\fireweaver.png")
 
 ;;;;;;;;;;;;;;;;;;;;;;;
 ; DO NOT CHANGE BELOW ;
