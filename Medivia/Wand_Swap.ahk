@@ -10,7 +10,7 @@ Icon_2 := GetFile("Medivia\Icons\Wand\fireweaver.png")
 
 #Persistent
 
-invIcon := GetFile("Medivia\Icons\inventory.png")
+global invIcon := GetFile("Medivia\Icons\inventory.png")
 
 Hotkey, ~$%Hotkey_1%, SetWand1, On
 Hotkey, ~$%Hotkey_2%, SetWand2, On
@@ -29,6 +29,8 @@ SetWand2:
 }
 
 SetWand(icon) {
+    global invIcon
+
     ImageSearch, slotX, slotY, 0, 0, %A_ScreenWidth%, %A_ScreenHeight%, %invIcon%
 
     If (ErrorLevel = 1) {
