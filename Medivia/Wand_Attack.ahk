@@ -29,7 +29,7 @@ UseOnCursor:
 
 UseOnBattle:
 {
-    ImageSearch, battleX, battleY, 0, 0, %A_ScreenWidth%, %A_ScreenHeight%, *60 *TransWhite %battleIcon%
+    ImageSearch, battleX, battleY, 0, 0, %A_ScreenWidth%, %A_ScreenHeight%, *25 *TransWhite %battleIcon%
 
     If (ErrorLevel = 1) {
         MsgBox, Open battle list first.
@@ -41,6 +41,7 @@ UseOnBattle:
         Return
     }
 
+    battleX += 10
     battleY += 50
     UseWand(battleX, battleY)
 
@@ -49,7 +50,7 @@ UseOnBattle:
 }
 
 UseWand(targetX, targetY) {
-    ImageSearch, wandX, wandY, 0, 0, %A_ScreenWidth%, %A_ScreenHeight%, *60 *TransWhite %wandIcon%
+    ImageSearch, wandX, wandY, 0, 0, %A_ScreenWidth%, %A_ScreenHeight%, *25 *TransWhite %wandIcon%
 
     If (ErrorLevel = 1) {
         MsgBox, Open your inventory first.
