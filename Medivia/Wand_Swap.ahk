@@ -33,7 +33,7 @@ SetWand(Icon_3)
 Return
 
 SetWand(icon) {
-    ImageSearch, slotX, slotY, 0, 0, %A_ScreenWidth%, %A_ScreenHeight%, %invIcon%
+    ImageSearch, slotX, slotY, 0, 0, %A_ScreenWidth%, %A_ScreenHeight%, *25 *TransWhite %invIcon%
 
     If (ErrorLevel = 1) {
         MsgBox, Open your inventory first.
@@ -50,7 +50,7 @@ SetWand(icon) {
 
     Loop, 10
     {
-        ImageSearch, wandX, wandY, 0, 0, %A_ScreenWidth%, %A_ScreenHeight%, %icon%
+        ImageSearch, wandX, wandY, 0, 0, %A_ScreenWidth%, %A_ScreenHeight%, *25 *TransWhite %icon%
 
         If (ErrorLevel = 0) {
             MouseLock()

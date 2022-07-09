@@ -16,7 +16,7 @@ Return
 
 EatFood:
 {
-    ImageSearch, iconX, iconY, 0, 0, %A_ScreenWidth%, %A_ScreenHeight%, %pzIcon%
+    ImageSearch, iconX, iconY, 0, 0, %A_ScreenWidth%, %A_ScreenHeight%, *25 *TransWhite %pzIcon%
 
     If (ErrorLevel = 0) {
         Return

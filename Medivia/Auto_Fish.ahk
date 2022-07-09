@@ -14,7 +14,7 @@ Return
 
 Fish:
 {
-    ImageSearch, iconX, iconY, 0, 0, %A_ScreenWidth%, %A_ScreenHeight%, %rodIcon%
+    ImageSearch, iconX, iconY, 0, 0, %A_ScreenWidth%, %A_ScreenHeight%, *25 *TransWhite %rodIcon%
 
     MouseGetPos, targetX, targetY
     MouseClick, right, %iconX%, %iconY%, 1, 0
