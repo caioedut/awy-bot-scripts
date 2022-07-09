@@ -1,5 +1,5 @@
 ; Settings
-Hotkey_Run = XButton1
+Hotkey_Run = XButton2
 
 ;;;;;;;;;;;;;;;;;;;;;;;
 ; DO NOT CHANGE BELOW ;
@@ -15,7 +15,7 @@ Return
 
 UseRune:
 {
-    ImageSearch, runePosX, runePosY, 0, 0, %A_ScreenWidth%, %A_ScreenHeight%, %runeIcon%
+    ImageSearch, runePosX, runePosY, 0, 0, %A_ScreenWidth%, %A_ScreenHeight%, *25 *TransWhite %runeIcon%
 
     MouseGetPos, PosX, PosY
     MouseClick, right, %runePosX%, %runePosY%, 1, 0

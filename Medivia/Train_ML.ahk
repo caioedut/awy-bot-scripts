@@ -13,6 +13,8 @@ Return
 
 AutoRune:
 {
+    Sleep, 500
+
     ImageSearch, iconX, iconY, 0, 0, %A_ScreenWidth%, %A_ScreenHeight%, %icon%
 
     If (ErrorLevel = 1) {
