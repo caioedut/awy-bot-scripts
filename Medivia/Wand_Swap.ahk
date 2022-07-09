@@ -48,5 +48,7 @@ SetWand(icon) {
 
     ImageSearch, wandX, wandY, 0, 0, %A_ScreenWidth%, %A_ScreenHeight%, %icon%
 
+    MouseBackup()
     MouseClickDrag, left, wandX, wandY, slotX, slotY, 0
+    MouseRestore()
 }
