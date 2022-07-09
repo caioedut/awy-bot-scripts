@@ -33,8 +33,6 @@ SetWand(Icon_3)
 Return
 
 SetWand(icon) {
-    global invIcon
-
     ImageSearch, slotX, slotY, 0, 0, %A_ScreenWidth%, %A_ScreenHeight%, %invIcon%
 
     If (ErrorLevel = 1) {
