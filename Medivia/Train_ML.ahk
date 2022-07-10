@@ -18,12 +18,12 @@ AutoRune:
     ImageSearch, iconX, iconY, 0, 0, %A_ScreenWidth%, %A_ScreenHeight%, %icon%
 
     If (ErrorLevel = 1) {
-        MsgBox, Open your life/mana panel.
+        Notify("Open your life/mana panel.")
         Return
     }
 
     If (ErrorLevel = 2) {
-        MsgBox, Could not conduct the search.
+        Notify("MsgBox, Could not conduct the search.")
         Return
     }
 

@@ -32,12 +32,12 @@ UseOnBattle:
     ImageSearch, battleX, battleY, 0, 0, %A_ScreenWidth%, %A_ScreenHeight%, *25 *TransWhite %battleIcon%
 
     If (ErrorLevel = 1) {
-        MsgBox, Open battle list first.
+        Notify("MsgBox, Open battle list first.")
         Return
     }
 
     If (ErrorLevel = 2) {
-        MsgBox, Could not conduct the search.
+        Notify("Could not conduct the search.")
         Return
     }
 
@@ -53,12 +53,12 @@ UseWand(targetX, targetY) {
     ImageSearch, wandX, wandY, 0, 0, %A_ScreenWidth%, %A_ScreenHeight%, *25 *TransWhite %wandIcon%
 
     If (ErrorLevel = 1) {
-        MsgBox, Open your inventory first.
+        Notify("MsgBox, Open your inventory first.")
         Return
     }
 
     If (ErrorLevel = 2) {
-        MsgBox, Could not conduct the search.
+        Notify("Could not conduct the search.")
         Return
     }
 

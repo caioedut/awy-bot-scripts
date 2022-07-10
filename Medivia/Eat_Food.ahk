@@ -7,7 +7,7 @@
 #Persistent
 SetMouseDelay, -1
 
-icons := ["blueberry", "apple", "grape", "meat", "ham", "fish"]
+icons := ["apple", "blueberry", "carrot", "grape", "ham", "herring", "honeycomb", "meat"]
 pzIcon := GetFile("Medivia\Icons\Status\protect.png")
 
 SetTimer, EatFood, 60000
@@ -17,7 +17,6 @@ Return
 EatFood:
 {
     ImageSearch, iconX, iconY, 0, 0, %A_ScreenWidth%, %A_ScreenHeight%, *25 *TransWhite %pzIcon%
-
     If (ErrorLevel = 0) {
         Return
     }
@@ -38,6 +37,8 @@ EatFood:
 
         Break
     }
+
+    Notify("No food found.")
 
     Return
 }

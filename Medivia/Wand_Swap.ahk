@@ -36,12 +36,12 @@ SetWand(icon) {
     ImageSearch, slotX, slotY, 0, 0, %A_ScreenWidth%, %A_ScreenHeight%, *25 *TransWhite %invIcon%
 
     If (ErrorLevel = 1) {
-        MsgBox, Open your inventory first.
+        Notify("Open your inventory first.")
         Return
     }
 
     If (ErrorLevel = 2) {
-        MsgBox, Could not conduct the search.
+        Notify("Could not conduct the search.")
         Return
     }
 
