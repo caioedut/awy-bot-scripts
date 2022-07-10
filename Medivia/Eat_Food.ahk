@@ -38,7 +38,5 @@ EatFood:
         Break
     }
 
-    Notify("No food found.")
-
     Return
 }
