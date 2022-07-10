@@ -7,7 +7,7 @@
 #Persistent
 SetMouseDelay, -1
 
-icons := ["apple", "blueberry", "carrot", "grape", "ham", "herring", "honeycomb", "meat"]
+icons := ["apple", "blueberry", "bread", "carrot", "cheese", "grape", "ham", "herring", "honeycomb", "meat"]
 pzIcon := GetFile("Medivia\Icons\Status\protect.png")
 
 SetTimer, EatFood, 60000
