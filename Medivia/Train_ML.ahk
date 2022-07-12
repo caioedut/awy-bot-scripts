@@ -48,7 +48,7 @@ AutoRune:
 
     percent := currentMana / totalMana * 100
 
-    If (percent < 90) {
+    If (percent < 90 || percent > 100) {
         Return
     }
 
