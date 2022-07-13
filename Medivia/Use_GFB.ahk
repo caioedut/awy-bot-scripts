@@ -1,3 +1,6 @@
+; Set hotkey to use item on cursor position.
+; If ScrollLock is on, it will use on battle list.
+
 ; Settings
 Hotkey_Run = XButton2
 
@@ -8,18 +11,39 @@ Hotkey_Run = XButton2
 #Persistent
 SetMouseDelay, -1
 
-runeIcon := GetFile("Medivia\Icons\use_gfb.png")
+itemIcon := GetFile("Medivia\Icons\Rune\gfb.png")
+battleIcon := GetFile("Medivia\Icons\Window\battle.png")
 
-Hotkey, $%Hotkey_Run%, UseRune, On
+Hotkey, ~$%Hotkey_Run%, UseItem, On
 Return
 
-UseRune:
+UseItem:
 {
-    ImageSearch, runePosX, runePosY, 0, 0, %A_ScreenWidth%, %A_ScreenHeight%, *25 *TransWhite %runeIcon%
+    ImageSearch, itemX, itemY, 0, 0, %A_ScreenWidth%, %A_ScreenHeight%, *25 *TransWhite %itemIcon%
 
-    MouseGetPos, PosX, PosY
-    MouseClick, right, %runePosX%, %runePosY%, 1, 0
-    MouseClick, left, %PosX%, %PosY%, 1, 0
+    If (ErrorLevel = 1) {
+        Notify("GFB not found.")
+        Return
+    }
+
+    MouseGetPos, targetX, targetY
+
+    If (GetKeyState("ScrollLock", "T")) {
+        ImageSearch, battleX, battleY, 0, 0, %A_ScreenWidth%, %A_ScreenHeight%, *25 *TransWhite %battleIcon%
+
+        If (ErrorLevel = 1) {
+            Notify("Open battle list first.")
+            Return
+        }
+
+        targetX := battleX + 10
+        targetY := battleY + 50
+    }
+
+    MouseBackup()
+    MouseClick, right, %itemX%, %itemY%, 1, 0
+    MouseClick, left, %targetX%, %targetY%, 1, 0
+    MouseRestore()
 
     Sleep, 500
     Return

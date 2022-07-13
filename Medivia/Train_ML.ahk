@@ -23,7 +23,7 @@ AutoRune:
     }
 
     If (ErrorLevel = 2) {
-        Notify("MsgBox, Could not conduct the search.")
+        Notify("Could not conduct the search.")
         Return
     }
 

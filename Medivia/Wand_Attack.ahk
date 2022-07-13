@@ -1,8 +1,8 @@
+; Set hotkey to use item on cursor position.
+; If ScrollLock is on, it will use on battle list.
+
 ; Settings
-; Use on mouse position:
 Hotkey_Run = x
-; Use on first creature in battle list:
-Hotkey_Auto = v
 
 ;;;;;;;;;;;;;;;;;;;;;;;
 ; DO NOT CHANGE BELOW ;
@@ -11,62 +11,43 @@ Hotkey_Auto = v
 #Persistent
 SetMouseDelay, -1
 
-global wandIcon := GetFile("Medivia\Icons\inventory.png")
-global battleIcon := GetFile("Medivia\Icons\Window\battle.png")
+itemIcon := GetFile("Medivia\Icons\inventory.png")
+battleIcon := GetFile("Medivia\Icons\Window\battle.png")
 
-Hotkey, ~$%Hotkey_Run%, UseOnCursor, On
-Hotkey, ~$%Hotkey_Auto%, UseOnBattle, On
+Hotkey, ~$%Hotkey_Run%, UseItem, On
 Return
 
-UseOnCursor:
+UseItem:
 {
-    MouseGetPos, cursorX, cursorY
-    UseWand(cursorX, cursorY)
-
-    Sleep, 500
-    Return
-}
-
-UseOnBattle:
-{
-    ImageSearch, battleX, battleY, 0, 0, %A_ScreenWidth%, %A_ScreenHeight%, *25 *TransWhite %battleIcon%
+    ImageSearch, itemX, itemY, 0, 0, %A_ScreenWidth%, %A_ScreenHeight%, *25 *TransWhite %itemIcon%
 
     If (ErrorLevel = 1) {
-        Notify("MsgBox, Open battle list first.")
+        Notify("Open your inventory.")
         Return
     }
 
-    If (ErrorLevel = 2) {
-        Notify("Could not conduct the search.")
-        Return
+    itemX += 20
+    itemY += 80
+
+    MouseGetPos, targetX, targetY
+
+    If (GetKeyState("ScrollLock", "T")) {
+        ImageSearch, battleX, battleY, 0, 0, %A_ScreenWidth%, %A_ScreenHeight%, *25 *TransWhite %battleIcon%
+
+        If (ErrorLevel = 1) {
+            Notify("Open battle list first.")
+            Return
+        }
+
+        targetX := battleX + 10
+        targetY := battleY + 50
     }
-
-    battleX += 10
-    battleY += 50
-    UseWand(battleX, battleY)
-
-    Sleep, 500
-    Return
-}
-
-UseWand(targetX, targetY) {
-    ImageSearch, wandX, wandY, 0, 0, %A_ScreenWidth%, %A_ScreenHeight%, *25 *TransWhite %wandIcon%
-
-    If (ErrorLevel = 1) {
-        Notify("MsgBox, Open your inventory first.")
-        Return
-    }
-
-    If (ErrorLevel = 2) {
-        Notify("Could not conduct the search.")
-        Return
-    }
-
-    wandX += 20
-    wandY += 80
 
     MouseBackup()
-    MouseClick, right, %wandX%, %wandY%, 1, 0
+    MouseClick, right, %itemX%, %itemY%, 1, 0
     MouseClick, left, %targetX%, %targetY%, 1, 0
     MouseRestore()
+
+    Sleep, 500
+    Return
 }

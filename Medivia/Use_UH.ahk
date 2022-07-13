@@ -1,3 +1,5 @@
+; Set hotkey to use item on cursor position.
+
 ; Settings
 Hotkey_Run = XButton1
 
@@ -8,18 +10,23 @@ Hotkey_Run = XButton1
 #Persistent
 SetMouseDelay, -1
 
-runeIcon := GetFile("Medivia\Icons\use_uh.png")
+itemIcon := GetFile("Medivia\Icons\Rune\uh.png")
 
-Hotkey, $%Hotkey_Run%, UseRune, On
+Hotkey, ~$%Hotkey_Run%, UseItem, On
 Return
 
-UseRune:
+UseItem:
 {
-    ImageSearch, runePosX, runePosY, 0, 0, %A_ScreenWidth%, %A_ScreenHeight%, *25 *TransWhite %runeIcon%
+    ImageSearch, itemX, itemY, 0, 0, %A_ScreenWidth%, %A_ScreenHeight%, *25 *TransWhite %itemIcon%
 
-    MouseGetPos, PosX, PosY
-    MouseClick, right, %runePosX%, %runePosY%, 1, 0
-    MouseClick, left, %PosX%, %PosY%, 1, 0
+    If (ErrorLevel = 1) {
+        Notify("UH not found.")
+        Return
+    }
+
+    MouseGetPos, targetX, targetY
+    MouseClick, right, %itemX%, %itemY%, 1, 0
+    MouseClick, left, %targetX%, %targetY%, 1, 0
 
     Sleep, 500
     Return
