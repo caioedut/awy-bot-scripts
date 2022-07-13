@@ -1,4 +1,4 @@
-Hotkey_Spell = {F10}
+Hotkey_Spell = {F11}
 
 ;;;;;;;;;;;;;;;;;;;;;;;
 ; DO NOT CHANGE BELOW ;

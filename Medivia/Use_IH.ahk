@@ -1,7 +1,7 @@
 ; Set hotkey to use item on cursor position.
 
 ; Settings
-Hotkey_Run = XButton1
+Hotkey_Run = {XButton1}
 
 ;;;;;;;;;;;;;;;;;;;;;;;
 ; DO NOT CHANGE BELOW ;
@@ -12,7 +12,8 @@ SetMouseDelay, -1
 
 itemIcon := GetFile("Medivia\Icons\Rune\ih.png")
 
-Hotkey, ~$%Hotkey_Run%, UseItem, On
+key := HotkeyClear(Hotkey_Run)
+Hotkey, ~$%key%, UseItem, On
 Return
 
 UseItem:

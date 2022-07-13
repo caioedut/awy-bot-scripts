@@ -2,7 +2,7 @@
 ; If ScrollLock is on, it will use on battle list.
 
 ; Settings
-Hotkey_Run = XButton2
+Hotkey_Run = {XButton2}
 
 ;;;;;;;;;;;;;;;;;;;;;;;
 ; DO NOT CHANGE BELOW ;
@@ -14,7 +14,8 @@ SetMouseDelay, -1
 itemIcon := GetFile("Medivia\Icons\Rune\sd.png")
 battleIcon := GetFile("Medivia\Icons\Window\battle.png")
 
-Hotkey, ~$%Hotkey_Run%, UseItem, On
+key := HotkeyClear(Hotkey_Run)
+Hotkey, ~$%key%, UseItem, On
 Return
 
 UseItem:
