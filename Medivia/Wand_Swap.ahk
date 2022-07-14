@@ -20,6 +20,7 @@ global invIcon := GetFile("Medivia\Icons\inventory.png")
 Hotkey, ~$%Hotkey_1%, SetWand1, On
 Hotkey, ~$%Hotkey_2%, SetWand2, On
 Hotkey, ~$%Hotkey_3%, SetWand3, On
+Hotkey, ~$%Hotkey_4%, SetWand4, On
 Return
 
 SetWand1:
