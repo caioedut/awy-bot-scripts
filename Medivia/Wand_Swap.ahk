@@ -1,10 +1,12 @@
 ; Settings
-Hotkey_1 = NumpadDiv
-Hotkey_2 = NumpadMult
-Hotkey_3 = NumpadSub
+Hotkey_1 = NumpadIns
+Hotkey_2 = NumpadDiv
+Hotkey_3 = NumpadMult
+Hotkey_4 = NumpadSub
 Icon_1 := GetFile("Medivia\Icons\Wand\moonlight.png")
 Icon_2 := GetFile("Medivia\Icons\Wand\serpent.png")
 Icon_3 := GetFile("Medivia\Icons\Wand\fireweaver.png")
+Icon_4 := GetFile("Medivia\Icons\Wand\stormcaller.png")
 
 ;;;;;;;;;;;;;;;;;;;;;;;
 ; DO NOT CHANGE BELOW ;
@@ -30,6 +32,10 @@ Return
 
 SetWand3:
 SetWand(Icon_3)
+Return
+
+SetWand4:
+SetWand(Icon_4)
 Return
 
 SetWand(icon) {
