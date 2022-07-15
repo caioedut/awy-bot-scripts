@@ -8,7 +8,6 @@ Hotkey_Run = {XButton2}
 ; DO NOT CHANGE BELOW ;
 ;;;;;;;;;;;;;;;;;;;;;;;
 
-#Persistent
 SetMouseDelay, -1
 
 itemIcon := GetFile("Medivia\Icons\Rune\hmm.png")

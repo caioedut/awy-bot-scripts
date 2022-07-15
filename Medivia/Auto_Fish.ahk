@@ -4,7 +4,6 @@
 ; DO NOT CHANGE BELOW ;
 ;;;;;;;;;;;;;;;;;;;;;;;
 
-#Persistent
 SetMouseDelay, -1
 
 rodIcon := GetFile("Medivia\Icons\Fishing\wooden.png")

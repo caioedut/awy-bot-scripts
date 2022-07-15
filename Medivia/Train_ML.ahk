@@ -4,8 +4,6 @@ Hotkey_Spell = {F11}
 ; DO NOT CHANGE BELOW ;
 ;;;;;;;;;;;;;;;;;;;;;;;
 
-#Persistent
-
 icon := GetFile("Medivia\Icons\life_window.png")
 
 SetTimer, AutoRune, 2000
@@ -13,17 +11,10 @@ Return
 
 AutoRune:
 {
-    Sleep, 500
-
     ImageSearch, iconX, iconY, 0, 0, %A_ScreenWidth%, %A_ScreenHeight%, *25 *TransWhite %icon%
 
     If (ErrorLevel = 1) {
         Notify("Open your life/mana panel.")
-        Return
-    }
-
-    If (ErrorLevel = 2) {
-        Notify("Could not conduct the search.")
         Return
     }
 

@@ -2,7 +2,6 @@
 ; DO NOT CHANGE BELOW ;
 ;;;;;;;;;;;;;;;;;;;;;;;
 
-#Persistent
 SetKeyDelay, 1, 1
 
 If (!A_IsAdmin) {

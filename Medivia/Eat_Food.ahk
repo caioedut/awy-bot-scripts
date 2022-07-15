@@ -4,7 +4,6 @@
 ; DO NOT CHANGE BELOW ;
 ;;;;;;;;;;;;;;;;;;;;;;;
 
-#Persistent
 SetMouseDelay, -1
 
 icons := ["brown_mushroom", "white_mushroom", "ham", "meat", "herring", "apple", "blueberry", "bread", "carrot", "cheese", "corncob", "dragon_ham", "grape", "honeycomb", "orange", "roll"]

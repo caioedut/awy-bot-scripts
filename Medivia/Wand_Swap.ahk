@@ -12,7 +12,6 @@ Icon_4 := GetFile("Medivia\Icons\Wand\stormcaller.png")
 ; DO NOT CHANGE BELOW ;
 ;;;;;;;;;;;;;;;;;;;;;;;
 
-#Persistent
 SetMouseDelay, -1
 
 global invIcon := GetFile("Medivia\Icons\inventory.png")
@@ -44,11 +43,6 @@ SetWand(icon) {
 
     If (ErrorLevel = 1) {
         Notify("Open your inventory first.")
-        Return
-    }
-
-    If (ErrorLevel = 2) {
-        Notify("Could not conduct the search.")
         Return
     }
 

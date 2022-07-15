@@ -9,7 +9,6 @@ SlotY = 0
 ; DO NOT CHANGE BELOW ;
 ;;;;;;;;;;;;;;;;;;;;;;;
 
-#Persistent
 SetMouseDelay, -1
 
 Hotkey, $%Hotkey_Run%, AutoLoot, On
