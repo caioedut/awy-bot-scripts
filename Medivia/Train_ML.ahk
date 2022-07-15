@@ -15,7 +15,7 @@ AutoRune:
 {
     Sleep, 500
 
-    ImageSearch, iconX, iconY, 0, 0, %A_ScreenWidth%, %A_ScreenHeight%, %icon%
+    ImageSearch, iconX, iconY, 0, 0, %A_ScreenWidth%, %A_ScreenHeight%, *25 *TransWhite %icon%
 
     If (ErrorLevel = 1) {
         Notify("Open your life/mana panel.")
